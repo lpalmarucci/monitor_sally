@@ -1,18 +1,18 @@
 import React from 'react';
-import ChartHumidityComponent from '../components/ChartHumidityComponent';
+import ChartTemperatureComponent from '../components/ChartTemperatureComponent';
 
-function ChartHumidityContainer(){
+function ChartTemperatureContainer(){
 
     const defaultOptions = {
         animationEnabled: true,
         exportEnabled: false,
         theme: "light1", // "light1", "dark1", "dark2"
         title:{
-            text: "Humidity"
+            text: "Temperature"
         },
         axisY: {
-            title: "Umidità",
-            suffix: "%"
+            title: "°C",
+            suffix: "°"
         },
         axisX: {
             title: "Ora",
@@ -23,9 +23,9 @@ function ChartHumidityContainer(){
 
     return (
         <div>
-            <ChartHumidityComponent options={defaultOptions}/>
+            <ChartTemperatureComponent options={defaultOptions}/>
         </div>
     )
 }
 
-export default ChartHumidityContainer;
+export default ChartTemperatureContainer;
