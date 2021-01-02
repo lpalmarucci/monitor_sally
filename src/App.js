@@ -2,11 +2,19 @@
 
 import React from 'react';
 import ChartHumidityContainer from './containers/ChartHumidityContainer';
+import ChartTemperatureContainer from './containers/ChartTemperatureContainer';
+import './Charts.css';
 
 function App() {
+  
+  const styles = {
+    display : "flex"
+  }
+
   return (
-    <div className="App">
+    <div style={styles}>
       <ChartHumidityContainer />
+      <ChartTemperatureContainer />
     </div>
   );
 }
