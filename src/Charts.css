@@ -5,11 +5,23 @@
 html {
 	height: 100%;
 }
-body {
+/* body {
 	display: flex;
 	flex-direction: column;
-}
+} */
 .chartContainer {
-    margin : 30px auto;
-    margin-left : 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 30px;
+    margin: 0 auto;
+}
+
+.chart {
+    grid-column: 1/2;
+    grid-row: 1;
+    justify-items: space-around;
+    width: 800px;
+    height: 800px;
+    margin-left: 7%;
 }
