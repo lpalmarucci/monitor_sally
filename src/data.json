@@ -1,0 +1,14 @@
+{
+    "caption" : [
+        {"time" : "10:00","value" : 20},
+        {"time" : "10:01","value" : 30},
+        {"time" : "10:02","value" : 20},
+        {"time" : "10:03","value" : 20},
+        {"time" : "10:04","value" : 20},
+        {"time" : "10:05","value" : 21},
+        {"time" : "10:06","value" : 20},
+        {"time" : "10:07","value" : 22},
+        {"time" : "10:08","value" : 20},
+        {"time" : "10:09","value" : 24}
+    ]
+}
