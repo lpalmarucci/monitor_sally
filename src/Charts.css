@@ -14,7 +14,8 @@ html {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
     gap: 30px;
-    margin: 0 auto;
+    flex-direction: row;
+    margin-left: 5%;
 }
 
 .chart {
@@ -23,5 +24,8 @@ html {
     justify-items: space-around;
     width: 800px;
     height: 800px;
-    margin-left: 7%;
+}
+
+.wrapper{
+    display: flex;
 }

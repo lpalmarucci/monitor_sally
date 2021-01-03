@@ -1,20 +1,46 @@
 
 
 import React from 'react';
-import ChartHumidityContainer from './containers/ChartHumidityContainer';
-import ChartTemperatureContainer from './containers/ChartTemperatureContainer';
+import ChartContainer from './containers/ChartContainer';
 import './Charts.css';
 
 function App() {
-  
-  const styles = {
-    display : "flex"
+  const charts_temp_options = {
+    animationEnabled: true,
+    exportEnabled: false,
+    theme: "light1", // "light1", "dark1", "dark2"
+    title : {
+      text : "Temperature"
+    },
+    axisY : {
+      title : "Temperature",
+      suffix : "°"
+    },
+    axisX : {
+      title : "Time"
+    }
+  }
+
+  const charts_humi_options = {
+    animationEnabled: true,
+    exportEnabled: false,
+    theme: "light1", // "light1", "dark1", "dark2"
+    title : {
+      text : "Humidity"
+    },
+    axisY : {
+      title : "Percentage",
+      suffix : "%"
+    },
+    axisX : {
+      title : "Time"
+    }
   }
 
   return (
-    <div style={styles}>
-      <ChartHumidityContainer />
-      <ChartTemperatureContainer />
+    <div className="wrapper">
+      <ChartContainer name="Temperature" options={charts_temp_options}/>
+      <ChartContainer name="Humidity" options={charts_humi_options}/>
     </div>
   );
 }
