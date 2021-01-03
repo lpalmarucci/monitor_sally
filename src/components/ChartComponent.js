@@ -5,7 +5,7 @@ import CanvasJSReact from '../lib/canvasjs.react'
 var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
-class ChartTemperatureComponent extends React.Component{
+class ChartComponent extends React.Component{
 
     constructor(props){
         super(props);
@@ -62,4 +62,4 @@ class ChartTemperatureComponent extends React.Component{
     }
 }
 
-export default ChartTemperatureComponent;
+export default ChartComponent;
