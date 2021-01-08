@@ -1,65 +1,68 @@
-import React from 'react'
-import CanvasJSReact from '../lib/canvasjs.react'
+import { render } from '@testing-library/react';
+import React, { useEffect, useState } from 'react'
 
-// Dichiarazione variabili per Charts
-var CanvasJS = CanvasJSReact.CanvasJS;
-var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+import {Line} from 'react-chartjs-2'
 
-class ChartComponent extends React.Component{
+var chart;
+function ChartComponent(props){
 
-    constructor(props){
-        super(props);
-        this.state = {
-            options : this.props.options,
-            dataPoints : [],
-            xVal : 0,
-            yVal : 15,
-            updateInterval : 1000
-        };
-        this.getData = this.getData.bind(this);
-    }
+    const chart = React.createRef();
+    var [data, setData] = useState([10,20,50,30,40]);
+    var [labels, setLabels] = useState(["15:00","15:05","15:10"]);
 
-    componentDidMount(){
-        // TODO:
-        // Aggiungere il fetch dei dati da Google Drive Sheet
-        setInterval(() => this.getData(),500);
-    }
+    useEffect(() => {
+        setTimeout(() => {
+            console.log("useEffect");
+            data.push(77);
+            data.push(23);
+            let old_labels = labels.slice();
+            old_labels.push("15:15");
+            old_labels.push("15:20");
+            setLabels(old_labels);
+        },1000);
+    },[]);
 
-    getData(){
-        let new_yVal = Math.floor(Math.random() * (40 + 1));
-        let dps = this.state.dataPoints.slice();
-        let dpsColor = new_yVal >= 50 ? "#e40000" : new_yVal >= 30 ? "#ec7426" : new_yVal >= 10 ? "#88df86" : "#81c2ea ";
-        dps.push({x: this.state.xVal,y: new_yVal,color: dpsColor});
-		if (dps.length >  10 ) {
-            dps.shift();    
-        }
-        this.setState(prevState =>{
-                return {
-                    dataPoints : dps,
-                    xVal : ++prevState.xVal,
-                    yVal : new_yVal,
-            }
-        })
-		this.chart.render();
-    }
+    console.log("return");
+    return (
+        <div>
+            <Line 
+                data={{
+                    labels : labels,
+                    datasets : [{
+                        fill: 'start',
+                        label : props.name,
+                        data : [10,20,15,55,44,100],
+                        backgroundColor : ["orange"],
+                        borderWidth: 10
+                    }]
+                }}
+                height={400}
+                width={600}
+                options={{ 
+                    maintainAspectRatio: false,
+                    scales : {
+                        min : 0,
+                        max : 100,
+                        yAxes : [{
+                            ticks: {
+                                beginAtZero : true
+                            }
+                        }],
+                        // xAxes : [{
+                        //     type: 'time',
+                        //     time: {
+                        //         displayFormats: {
+                        //             quarter: 'h:mm a'
+                        //         }
+                        //     }
+                        // }]
+                    }
+                }}
+                onRef={chart}
+            />
+        </div>
+    )
 
-    render() {	
-        const current_data = this.state.dataPoints;
-        let new_options = this.state.options;
-        new_options.data = [{}];
-        new_options.data[0].type = "line";
-        new_options.data[0].dataPoints = this.state.dataPoints;
-      
-		return (
-            <div className="chartContainer">
-                <div className="chart">
-                    <CanvasJSChart options = {new_options} 
-                        onRef={ref => this.chart = ref}
-                    />
-                </div>
-            </div>
-		);
-    }
 }
 
 export default ChartComponent;
