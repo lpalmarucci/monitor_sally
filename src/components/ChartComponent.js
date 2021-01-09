@@ -1,64 +1,79 @@
 import { render } from '@testing-library/react';
 import React, { useEffect, useState } from 'react'
 
-import {Line} from 'react-chartjs-2'
+import {Line} from 'react-chartjs-2';
 
-var chart;
 function ChartComponent(props){
 
-    const chart = React.createRef();
-    var [data, setData] = useState([10,20,50,30,40]);
-    var [labels, setLabels] = useState(["15:00","15:05","15:10"]);
+    const NUM__PUNTI__DA__DISEGNARE = 10;
+
+    var [data, setData] = useState([]);
+    var [labels, setLabels] = useState([]);
 
     useEffect(() => {
-        setTimeout(() => {
-            console.log("useEffect");
-            data.push(77);
-            data.push(23);
-            let old_labels = labels.slice();
-            old_labels.push("15:15");
-            old_labels.push("15:20");
-            setLabels(old_labels);
-        },1000);
-    },[]);
+        let len = props.data_from_sheet.length;
+        let xValues = [];
+        let yValues = [];
+        if(len != 0){
+            for(let idx = 0;idx < len;idx++){
+                xValues.push(props.data_from_sheet[idx].Time);
+                yValues.push(props.data_from_sheet[idx][props.name]);
+            }
+            if(len > 10){
+                for(let idx = 0;idx < len - NUM__PUNTI__DA__DISEGNARE; idx++){
+                    xValues.shift();
+                    yValues.shift();
+                }
+            }
+        }
 
-    console.log("return");
+        //X
+        setLabels(xValues);
+        //Y
+        setData(yValues);
+
+        
+    },[props.data_from_sheet]);
+
+
     return (
         <div>
             <Line 
                 data={{
                     labels : labels,
                     datasets : [{
-                        fill: 'start',
+                        fill: false,
                         label : props.name,
-                        data : [10,20,15,55,44,100],
-                        backgroundColor : ["orange"],
-                        borderWidth: 10
+                        data : data,
+                        backgroundColor: "rgb(171, 63, 46)",
+                        borderColor: 'rgba(171, 63, 46, 0.3)',
+                        borderWidth: 6,
+                        pointRadius: 6,
+                        pointStyle:"circle",
+                        pointBorderWidth: 6,
+                        pointHoverBorderWidth : 10,
+                        // lineTension : 0
                     }]
                 }}
                 height={400}
                 width={600}
-                options={{ 
+                options={{
                     maintainAspectRatio: false,
+                    title : {
+                        display : false,
+                        text : "Grafici per la nostra amata sally 🍁"
+                    },
                     scales : {
-                        min : 0,
-                        max : 100,
                         yAxes : [{
                             ticks: {
-                                beginAtZero : true
+                                beginAtZero : true,
+                                min: 0,
+                                max: (props.name == "Temperature") ? 40 : 100
+                                // stepSize: 5  
                             }
-                        }],
-                        // xAxes : [{
-                        //     type: 'time',
-                        //     time: {
-                        //         displayFormats: {
-                        //             quarter: 'h:mm a'
-                        //         }
-                        //     }
-                        // }]
+                        }]
                     }
                 }}
-                onRef={chart}
             />
         </div>
     )
