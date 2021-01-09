@@ -5,25 +5,15 @@
 html {
 	height: 100%;
 }
-/* body {
-	display: flex;
-	flex-direction: column;
-} */
 .chartContainer {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    gap: 30px;
-    flex-direction: row;
-    margin-left: 5%;
+    display: flex;
 }
 
-.chart {
-    grid-column: 1/2;
-    grid-row: 1;
-    justify-items: space-around;
+.chart-1, .chart-2{
+    flex: 0 0 50%;
+    margin: 0 auto;
     width: 800px;
-    height: 800px;
+    margin-right: 10%;
 }
 
 .wrapper{
