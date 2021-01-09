@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/monitor_sally/static/css/main.c041e382.chunk.css",
-    "main.js": "/monitor_sally/static/js/main.425c17d8.chunk.js",
-    "main.js.map": "/monitor_sally/static/js/main.425c17d8.chunk.js.map",
-    "runtime-main.js": "/monitor_sally/static/js/runtime-main.0d950681.js",
-    "runtime-main.js.map": "/monitor_sally/static/js/runtime-main.0d950681.js.map",
-    "static/js/2.b3bb04a2.chunk.js": "/monitor_sally/static/js/2.b3bb04a2.chunk.js",
-    "static/js/2.b3bb04a2.chunk.js.map": "/monitor_sally/static/js/2.b3bb04a2.chunk.js.map",
-    "index.html": "/monitor_sally/index.html",
-    "static/css/main.c041e382.chunk.css.map": "/monitor_sally/static/css/main.c041e382.chunk.css.map",
-    "static/js/2.b3bb04a2.chunk.js.LICENSE.txt": "/monitor_sally/static/js/2.b3bb04a2.chunk.js.LICENSE.txt"
+    "main.css": "/sally.monitor.com/static/css/main.c041e382.chunk.css",
+    "main.js": "/sally.monitor.com/static/js/main.425c17d8.chunk.js",
+    "main.js.map": "/sally.monitor.com/static/js/main.425c17d8.chunk.js.map",
+    "runtime-main.js": "/sally.monitor.com/static/js/runtime-main.27b7ddf9.js",
+    "runtime-main.js.map": "/sally.monitor.com/static/js/runtime-main.27b7ddf9.js.map",
+    "static/js/2.eb29b0a6.chunk.js": "/sally.monitor.com/static/js/2.eb29b0a6.chunk.js",
+    "static/js/2.eb29b0a6.chunk.js.map": "/sally.monitor.com/static/js/2.eb29b0a6.chunk.js.map",
+    "index.html": "/sally.monitor.com/index.html",
+    "static/css/main.c041e382.chunk.css.map": "/sally.monitor.com/static/css/main.c041e382.chunk.css.map",
+    "static/js/2.eb29b0a6.chunk.js.LICENSE.txt": "/sally.monitor.com/static/js/2.eb29b0a6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.0d950681.js",
-    "static/js/2.b3bb04a2.chunk.js",
+    "static/js/runtime-main.27b7ddf9.js",
+    "static/js/2.eb29b0a6.chunk.js",
     "static/css/main.c041e382.chunk.css",
     "static/js/main.425c17d8.chunk.js"
   ]
