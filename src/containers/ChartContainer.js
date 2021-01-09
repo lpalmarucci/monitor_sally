@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import Tabletop from 'tabletop';
 import ChartComponent from '../components/ChartComponent';
 
+
+var display = <h1>Loading...</h1>;
 function ChartContainer(props){
 
     const charts_temp_options = {
@@ -36,7 +38,7 @@ function ChartContainer(props){
         }
       }
 
-    const [data,setData] = useState([
+    const [q_data,setData] = useState([
         // {x: 0, y: 30, color: "#ec7426"},
         // {x: 1, y: 29, color: "#88df86"},
         // {x: 2, y: 30, color: "#ec7426"},
@@ -53,7 +55,6 @@ function ChartContainer(props){
     ]);
 
     useEffect(() => {
-        // setTimeout(() => {
             Tabletop.init( {
                     key: 'https://docs.google.com/spreadsheets/d/18W3JiJbGZPc3IT2YhUlwp2XYH6lnqxG4nqsFGbXsj9o/edit?usp=sharing',
                     simpleSheet: true 
@@ -64,26 +65,27 @@ function ChartContainer(props){
                     }
                     setData(data);
                 })
-        // }, 2000);
     },[]);
 
-    return (
-        <div className="chartContainer">
-            <ChartComponent 
-                data_from_sheet={data} 
-                options={charts_temp_options}
-                name="Temperature"
-            />
+    if(q_data.length > 0){
+        display = <div className="chartContainer"> 
+                    <ChartComponent 
+                        data_from_sheet={q_data} 
+                        options={charts_temp_options}
+                        name="Temperature"
+                    />
 
-            <ChartComponent 
-                data_from_sheet={data} 
-                options={charts_humi_options}
-                name="Humidity"
-            />
-        </div>
+                    <ChartComponent 
+                        data_from_sheet={q_data} 
+                        options={charts_humi_options}
+                        name="Humidity"
+                    />
+                  </div>
+    } else{
+        display = <h1>Loading...</h1>
+    }
 
-        
-    )
+    return ( <div> {display} </div> )
 }
 
 export default ChartContainer;
