@@ -19,6 +19,10 @@ function ChartContainer(props){
         },
         axisX : {
           title : "Time"
+        },
+        opt_datasets: {
+          backgroundColor: "rgb(171, 63, 46)",
+          borderColor: 'rgba(171, 63, 46, 0.3)'
         }
       }
     
@@ -35,6 +39,10 @@ function ChartContainer(props){
         },
         axisX : {
           title : "Time"
+        },
+        opt_datasets: {
+            backgroundColor: "rgb(74, 181, 211)",
+            borderColor: 'rgba(74, 181, 211, 0.3)'
         }
       }
 

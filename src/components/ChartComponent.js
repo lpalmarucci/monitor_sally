@@ -1,4 +1,3 @@
-import { render } from '@testing-library/react';
 import React, { useEffect, useState } from 'react'
 
 import {Line} from 'react-chartjs-2';
@@ -14,12 +13,12 @@ function ChartComponent(props){
         let len = props.data_from_sheet.length;
         let xValues = [];
         let yValues = [];
-        if(len != 0){
+        if(len !== 0){
             for(let idx = 0;idx < len;idx++){
                 xValues.push(props.data_from_sheet[idx].Time);
                 yValues.push(props.data_from_sheet[idx][props.name]);
             }
-            if(len > 10){
+            if(len > NUM__PUNTI__DA__DISEGNARE){
                 for(let idx = 0;idx < len - NUM__PUNTI__DA__DISEGNARE; idx++){
                     xValues.shift();
                     yValues.shift();
@@ -35,6 +34,7 @@ function ChartComponent(props){
         
     },[props.data_from_sheet]);
 
+    console.log(props);
 
     return (
         <div>
@@ -45,8 +45,8 @@ function ChartComponent(props){
                         fill: false,
                         label : props.name,
                         data : data,
-                        backgroundColor: "rgb(171, 63, 46)",
-                        borderColor: 'rgba(171, 63, 46, 0.3)',
+                        backgroundColor: props.options.opt_datasets.backgroundColor,
+                        borderColor: props.options.opt_datasets.borderColor,
                         borderWidth: 6,
                         pointRadius: 6,
                         pointStyle:"circle",
