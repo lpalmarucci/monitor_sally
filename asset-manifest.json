@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/monitor_sally/static/css/main.c041e382.chunk.css",
-    "main.js": "/monitor_sally/static/js/main.af26a677.chunk.js",
-    "main.js.map": "/monitor_sally/static/js/main.af26a677.chunk.js.map",
+    "main.css": "/monitor_sally/static/css/main.830b2235.chunk.css",
+    "main.js": "/monitor_sally/static/js/main.34bda81d.chunk.js",
+    "main.js.map": "/monitor_sally/static/js/main.34bda81d.chunk.js.map",
     "runtime-main.js": "/monitor_sally/static/js/runtime-main.0d950681.js",
     "runtime-main.js.map": "/monitor_sally/static/js/runtime-main.0d950681.js.map",
     "static/js/2.b3bb04a2.chunk.js": "/monitor_sally/static/js/2.b3bb04a2.chunk.js",
     "static/js/2.b3bb04a2.chunk.js.map": "/monitor_sally/static/js/2.b3bb04a2.chunk.js.map",
     "index.html": "/monitor_sally/index.html",
-    "static/css/main.c041e382.chunk.css.map": "/monitor_sally/static/css/main.c041e382.chunk.css.map",
+    "static/css/main.830b2235.chunk.css.map": "/monitor_sally/static/css/main.830b2235.chunk.css.map",
     "static/js/2.b3bb04a2.chunk.js.LICENSE.txt": "/monitor_sally/static/js/2.b3bb04a2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.0d950681.js",
     "static/js/2.b3bb04a2.chunk.js",
-    "static/css/main.c041e382.chunk.css",
-    "static/js/main.af26a677.chunk.js"
+    "static/css/main.830b2235.chunk.css",
+    "static/js/main.34bda81d.chunk.js"
   ]
 }
