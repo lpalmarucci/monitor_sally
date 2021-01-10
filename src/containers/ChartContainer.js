@@ -21,9 +21,12 @@ function ChartContainer(props){
           title : "Time"
         },
         opt_datasets: {
-          backgroundColor: "rgb(171, 63, 46)",
-          borderColor: 'rgba(171, 63, 46, 0.3)'
-        }
+          backgroundColor: "rgb(224, 11, 33)",
+          borderColor: 'rgba(224, 11, 33, 0.3)'
+        },
+        min: 18,
+        max: 40,
+        stepSize: 2.5
       }
     
       const charts_humi_options = {
@@ -43,7 +46,10 @@ function ChartContainer(props){
         opt_datasets: {
             backgroundColor: "rgb(74, 181, 211)",
             borderColor: 'rgba(74, 181, 211, 0.3)'
-        }
+        },
+        min: 50,
+        max: 100,
+        stepSize: 5
       }
 
     const [q_data,setData] = useState([]);

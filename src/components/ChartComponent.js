@@ -34,8 +34,6 @@ function ChartComponent(props){
         
     },[props.data_from_sheet]);
 
-    console.log(props);
-
     return (
         <div>
             <Line 
@@ -66,10 +64,11 @@ function ChartComponent(props){
                     scales : {
                         yAxes : [{
                             ticks: {
+                                // maxTicksLimit: 11,
                                 beginAtZero : true,
-                                min: 0,
-                                max: (props.name == "Temperature") ? 40 : 100
-                                // stepSize: 5  
+                                min: props.options.min,
+                                max: props.options.max,
+                                stepSize: props.options.stepSize
                             }
                         }]
                     }
