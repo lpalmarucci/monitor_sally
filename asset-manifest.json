@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/monitor_sally/static/css/main.c041e382.chunk.css",
-    "main.js": "/monitor_sally/static/js/main.376b7553.chunk.js",
-    "main.js.map": "/monitor_sally/static/js/main.376b7553.chunk.js.map",
+    "main.js": "/monitor_sally/static/js/main.db81b2eb.chunk.js",
+    "main.js.map": "/monitor_sally/static/js/main.db81b2eb.chunk.js.map",
     "runtime-main.js": "/monitor_sally/static/js/runtime-main.0d950681.js",
     "runtime-main.js.map": "/monitor_sally/static/js/runtime-main.0d950681.js.map",
     "static/js/2.b3bb04a2.chunk.js": "/monitor_sally/static/js/2.b3bb04a2.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.0d950681.js",
     "static/js/2.b3bb04a2.chunk.js",
     "static/css/main.c041e382.chunk.css",
-    "static/js/main.376b7553.chunk.js"
+    "static/js/main.db81b2eb.chunk.js"
   ]
 }
