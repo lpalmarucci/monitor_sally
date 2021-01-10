@@ -1,10 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import Tabletop from 'tabletop';
 import ChartComponent from '../components/ChartComponent';
+import gif_loading from '../img/loading.gif';
 
 
 function ChartContainer(props){
-    var display = <h1>Loading...</h1>;
+    var display = <div className="imgLoading">
+                    <img src={gif_loading} alt="loading..."></img>              
+                  </div>;
 
     const charts_temp_options = {
         animationEnabled: true,
