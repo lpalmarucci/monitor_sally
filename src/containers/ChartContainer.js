@@ -57,10 +57,12 @@ function ChartContainer(props){
     useEffect(() => {
         setInterval(() => {
             Tabletop.init( {
-                    key: 'https://docs.google.com/spreadsheets/d/18W3JiJbGZPc3IT2YhUlwp2XYH6lnqxG4nqsFGbXsj9o/edit?usp=sharing',
-                    simpleSheet: true 
+                  key: 'https://docs.google.com/spreadsheets/d/18W3JiJbGZPc3IT2YhUlwp2XYH6lnqxG4nqsFGbXsj9o/edit?usp=sharing',
+                  simpleSheet: true,
+                  wanted: ["Dati_arduino"],
+                  singleton : true //permettere di creare una sola istanza e l'accesso a tale viene fatta in un punto globale
                 }).then((data) => {
-                    setData(data);
+                  setData(data);
                 })
         },5000);
     },[]);
